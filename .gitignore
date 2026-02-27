@@ -1,7 +1,14 @@
 venv/
 __pycache__/
 *.pyc
-models/
+
+# ignore all models
+models/*
+
+# allow our trained model
+!models/bert-harassment/
+!models/bert-harassment/**
+
 logs/
 outputs/
 .cache/
