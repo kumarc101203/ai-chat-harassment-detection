@@ -1,85 +1,152 @@
-# AI Chat Harassment Detection using BERT
+# AI Chat Harassment Detection System
 
-## Overview
+A deep learning–based NLP system that detects harassment in chat messages using a fine-tuned BERT model.
 
-This project builds a deep learning model to detect harassment in chat messages using BERT (Bidirectional Encoder Representations from Transformers).
-
-The model is trained on the Jigsaw Toxic Comment dataset and fine-tuned for binary harassment classification.
+This project is designed for real-world deployment in chat platforms, social media moderation, and online community safety.
 
 ---
 
-## Features
+# Project Overview
 
-* BERT-based text classification
-* GPU training using NVIDIA RTX 4060
-* HuggingFace Transformers
-* PyTorch backend
-* Real-world harassment detection pipeline
+Online harassment is a major global problem. Manual moderation is slow, expensive, and inconsistent.
 
----
+This system uses a fine-tuned BERT transformer model to automatically detect harassment in real time.
 
-## Dataset
+The model classifies text into:
 
-Jigsaw Toxic Comment Classification Dataset
-
-Total samples: 159,571
-
-Class distribution:
-
-* Non-harassment: 89.8%
-* Harassment: 10.2%
+* SAFE
+* HARASSMENT
 
 ---
 
-## Model
+# Model Details
 
-Base Model:
+Base Model: bert-base-uncased
+Architecture: Transformer (BERT)
+Framework: PyTorch + HuggingFace
 
-bert-base-uncased
+Training dataset size:
 
-Fine-tuned for binary classification.
-
----
-
-## Training
-
-Batch size: 8
-Epochs: 1
-Learning rate: 2e-5
-
-GPU: NVIDIA RTX 4060 Laptop GPU
+* 143,613 training samples
+* 15,958 validation samples
 
 ---
 
-## Project Structure
+# Performance
+
+Validation Results:
+
+Accuracy: 96.73%
+F1 Score: 0.837
+Precision: 0.849
+Recall: 0.826
+
+---
+
+# Example Predictions
+
+Input:
+
+You are an idiot
+
+Output:
+
+HARASSMENT (Confidence: 99.98%)
+
+Input:
+
+I hope you have a great day
+
+Output:
+
+SAFE (Confidence: 99.99%)
+
+---
+
+# Project Structure
 
 ```
 ai-chat-harassment-detection/
-│
-├── datasets/
-├── notebooks/
-├── README.md
-├── README_PLAN.md
-├── requirements.txt
+
+models/
+saved trained model
+
+notebooks/
+training notebooks
+
+data/
+dataset files
+
+predict.py
+prediction script
+
+requirements.txt
+dependencies
 ```
 
 ---
 
-## Status
+# Installation
 
-Training in progress.
+Clone repository:
+
+git clone https://github.com/kumarc101203/ai-chat-harassment-detection.git
+
+Go into folder:
+
+cd ai-chat-harassment-detection
+
+Install dependencies:
+
+pip install -r requirements.txt
 
 ---
 
-## Future Improvements
+# Usage
 
-* Increase epochs
-* Improve accuracy
-* Deploy as API
-* Build web interface
+Run prediction script:
+
+python predict.py
+
+Enter text and the model will classify it.
 
 ---
 
-## Author
+# Model Download
+
+Full trained model available at:
+
+https://huggingface.co/Silentspy03/bert-harassment-detector
+
+---
+
+# Applications
+
+Chat moderation
+Social media monitoring
+Online gaming moderation
+Community platforms
+Customer support filtering
+
+---
+
+# Future Improvements
+
+Multilingual support
+Context-aware detection
+Real-time deployment API
+Web interface
+
+---
+
+# Author
 
 Kumar
+
+AI / Machine Learning Developer
+
+---
+
+# License
+
+MIT License
